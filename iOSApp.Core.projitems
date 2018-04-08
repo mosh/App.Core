@@ -14,5 +14,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)AppCordinatorBase.pas" />
     <Compile Include="$(MSBuildThisFileDirectory)ISO8601FormatterProxy.pas" />
     <Compile Include="$(MSBuildThisFileDirectory)ApplicationHelpers.pas" />
+    <Compile Include="$(MSBuildThisFileDirectory)DateUtils.pas" />
+    <Compile Include="$(MSBuildThisFileDirectory)NSDateExtensions.pas" />
+    <Compile Include="$(MSBuildThisFileDirectory)IntegerExtensions.pas" />
+    <Compile Include="$(MSBuildThisFileDirectory)RemainderQuotient.pas" />
   </ItemGroup>
 </Project>
