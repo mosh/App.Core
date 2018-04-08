@@ -1,12 +1,13 @@
 ﻿namespace iOSApp.Core;
 
 uses
-  Foundation;
+  Foundation, RemObjects.Elements.RTL;
 
 type
 
   NSDateExtensions = public extension class(NSDate)
   public
+
     method ForDisplay: String;
     begin
       exit self.FormatDateForDisplay;
@@ -80,6 +81,11 @@ type
     method FormatDateForDisplay:NSString;
     begin
       exit NSDateFormatter.localizedStringFromDate(self) dateStyle(NSDateFormatterStyle.NSDateFormatterShortStyle ) timeStyle(NSDateFormatterStyle.NSDateFormatterNoStyle );
+    end;
+
+    method FormatDateTimeForDisplay:NSString;
+    begin
+      exit NSDateFormatter.localizedStringFromDate(self) dateStyle(NSDateFormatterStyle.NSDateFormatterShortStyle ) timeStyle(NSDateFormatterStyle.NSDateFormatterLongStyle );
     end;
 
   end;
