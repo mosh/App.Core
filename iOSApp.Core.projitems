@@ -13,5 +13,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)ServiceBase.pas" />
     <Compile Include="$(MSBuildThisFileDirectory)AppCordinatorBase.pas" />
     <Compile Include="$(MSBuildThisFileDirectory)ISO8601FormatterProxy.pas" />
+    <Compile Include="$(MSBuildThisFileDirectory)ApplicationHelpers.pas" />
   </ItemGroup>
 </Project>

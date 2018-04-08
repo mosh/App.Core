@@ -6,6 +6,7 @@ uses
 
 type
 
+  // Interface used to indicate View can receive
   IServiceEventReceiver = public interface
     method OnError(e:Exception); optional;
   end;
@@ -27,24 +28,24 @@ type
       begin
         var visibleController:NSObject := nil;
 
-        if(not assigned(rootController.presentedViewController))then
+        var someController := rootController;
+
+        if(assigned(rootController.presentedViewController))then
         begin
-          visibleController := rootController;
+          someController := rootController.presentedViewController;
+        end;
+
+        if(someController is UINavigationController)then
+        begin
+          visibleController := UINavigationController(someController).viewControllers.lastObject;
+        end
+        else if (someController is UITabBarController)then
+        begin
+          visibleController := UITabBarController(someController).selectedViewController;
         end
         else
         begin
-          if(rootController.presentedViewController is UINavigationController)then
-          begin
-            visibleController := UINavigationController(rootController.presentedViewController).viewControllers.lastObject;
-          end
-          else if (rootController.presentedViewController is UITabBarController)then
-          begin
-            visibleController := UITabBarController(rootController.presentedViewController).selectedViewController;
-          end
-          else
-          begin
-            visibleController := rootController.presentedViewController;
-          end;
+          visibleController := someController;
         end;
 
         if((assigned(visibleController)) and (visibleController is UIViewController))then
