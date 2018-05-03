@@ -85,7 +85,10 @@ type
 
     method FormatDateTimeForDisplay:NSString;
     begin
-      exit NSDateFormatter.localizedStringFromDate(self) dateStyle(NSDateFormatterStyle.NSDateFormatterShortStyle ) timeStyle(NSDateFormatterStyle.NSDateFormatterLongStyle );
+      var dateFormatter := new NSDateFormatter;
+      dateFormatter.setDateFormat('E, d MMM HH:mm zzz');
+
+      exit dateFormatter.stringFromDate(self)
     end;
 
   end;
