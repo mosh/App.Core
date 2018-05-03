@@ -18,5 +18,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)NSDateExtensions.pas" />
     <Compile Include="$(MSBuildThisFileDirectory)IntegerExtensions.pas" />
     <Compile Include="$(MSBuildThisFileDirectory)RemainderQuotient.pas" />
+    <Compile Include="$(MSBuildThisFileDirectory)Storage\Realm\StorageBase.pas" />
+    <Compile Include="$(MSBuildThisFileDirectory)Storage\Data\DataObject.pas" />
+    <Compile Include="$(MSBuildThisFileDirectory)Storage\Data\NamedObject.pas" />
   </ItemGroup>
 </Project>
