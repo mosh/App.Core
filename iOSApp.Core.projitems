@@ -1,9 +1,10 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <PropertyGroup>
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
     <HasSharedItems>true</HasSharedItems>
     <SharedGUID>{69003740-8B8F-4217-B66C-EF244B74FBF0}</SharedGUID>
+    <ProjectGuid>{1C378251-DE56-44BC-8A40-6E27B6C1DDB2}</ProjectGuid>
   </PropertyGroup>
   <PropertyGroup Label="Configuration">
     <Import_RootNamespace>iOSApp.Core</Import_RootNamespace>
