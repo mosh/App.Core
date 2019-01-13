@@ -1,7 +1,9 @@
 ﻿namespace iOSApp.Core;
 
 uses
-  Foundation, iOSApp.Core.Storage;
+  Foundation,
+  iOSApp.Core.Storage,
+  Moshine.Foundation;
 
 type
 
@@ -42,6 +44,25 @@ type
         exit (NSOperationQueue.mainQueue.operationCount>0);
       end;
 
+    method offline:Boolean;
+    begin
+      NSLog('%@','calling reachability');
+      try
+        var obj := Reachability.reachabilityForInternetConnection;
+        var status := obj.currentReachabilityStatus;
+        case status of
+          NetworkStatus.NotReachable: exit true;
+          NetworkStatus.ReachableViaWiFi: exit false;
+          NetworkStatus.ReachableViaWWAN: exit false;
+        end;
+      except
+        on E:Exception do
+        begin
+          NSLog('Reachability Failed with exception %@', E.Message);
+          exit true;
+        end;
+      end;
+    end;
 
   end;
 
