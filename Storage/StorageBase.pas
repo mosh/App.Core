@@ -6,6 +6,12 @@ type
   protected
   public
     const newItemStartPoint:Integer = -10;
+
+    method launch; virtual;
+    begin
+
+    end;
+
   end;
 
 end.

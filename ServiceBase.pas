@@ -37,6 +37,8 @@ type
     begin
       workerQueue := new NSOperationQueue();
       self.Storage := someStorage;
+
+      self.Storage.launch;
     end;
 
     property InProgress:Boolean read
