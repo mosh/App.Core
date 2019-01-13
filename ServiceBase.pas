@@ -44,6 +44,19 @@ type
         exit (NSOperationQueue.mainQueue.operationCount>0);
       end;
 
+    method offset:Integer;
+    begin
+      var localTimeZone := NSTimeZone.localTimeZone;
+      var offsetInMinutes := (localTimeZone.secondsFromGMT/60);
+
+      if(localTimeZone.isDaylightSavingTime)then
+      begin
+        offsetInMinutes := offsetInMinutes - Integer((localTimeZone.daylightSavingTimeOffset/60));
+      end;
+      exit offsetInMinutes;
+    end;
+
+
     method offline:Boolean;
     begin
       NSLog('%@','calling reachability');
