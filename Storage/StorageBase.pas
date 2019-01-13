@@ -1,4 +1,4 @@
-﻿namespace iOSApp.Core.Storage.Realm;
+﻿namespace iOSApp.Core.Storage;
 
 type
   StorageBase = public class

@@ -1,7 +1,7 @@
 ﻿namespace iOSApp.Core;
 
 uses
-  Foundation;
+  Foundation, iOSApp.Core.Storage;
 
 type
 
@@ -26,15 +26,21 @@ type
 
     end;
 
-    method get_InProgress:Boolean;
-    begin
-      exit (NSOperationQueue.mainQueue.operationCount>0);
-    end;
-
 
   public
 
-    property InProgress:Boolean read get_InProgress;
+    property Storage:StorageBase read;
+
+    constructor withStorage(someStorage:StorageBase);
+    begin
+      workerQueue := new NSOperationQueue();
+      self.Storage := someStorage;
+    end;
+
+    property InProgress:Boolean read
+      begin
+        exit (NSOperationQueue.mainQueue.operationCount>0);
+      end;
 
 
   end;
