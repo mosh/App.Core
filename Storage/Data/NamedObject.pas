@@ -4,7 +4,7 @@ uses
   Foundation;
 
 type
-
+  [objc]
   NamedObject = public class(DataObject)
   private
   protected
