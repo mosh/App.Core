@@ -7,8 +7,11 @@ uses
 
 type
 
-  ServiceBase = public class
+  ServiceBase = public abstract class
+
   private
+    _storage:StorageBase;
+
   protected
     property workerQueue:NSOperationQueue;
 
@@ -31,14 +34,17 @@ type
 
   public
 
-    property Storage:StorageBase read;
-
     constructor withStorage(someStorage:StorageBase);
     begin
       workerQueue := new NSOperationQueue();
-      self.Storage := someStorage;
+      self._storage := someStorage;
 
-      self.Storage.launch;
+      Storage.launch;
+    end;
+
+    method Storage:StorageBase;
+    begin
+      exit _storage;
     end;
 
     property InProgress:Boolean read
