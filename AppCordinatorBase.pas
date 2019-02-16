@@ -61,37 +61,41 @@ type
 
     method FindReceiver:IServiceEventReceiver;
     begin
-      var rootController := _appDelegate.window.rootViewController;
+      var rootViewController := _appDelegate.window.rootViewController;
       var receiver:IServiceEventReceiver := nil;
 
-      if(assigned(rootController))then
+      if(not assigned(rootViewController))then
       begin
-        var visibleController:NSObject := nil;
+        exit nil;
+      end;
 
-        if(not assigned(rootController.presentedViewController))then
-        begin
-          visibleController := rootController;
-        end
-        else
-        begin
-          if(rootController.presentedViewController is UINavigationController)then
-          begin
-            visibleController := UINavigationController(rootController.presentedViewController).viewControllers.lastObject;
-          end
-          else if (rootController.presentedViewController is UITabBarController)then
-          begin
-            visibleController := UITabBarController(rootController.presentedViewController).selectedViewController;
-          end
-          else
-          begin
-            visibleController := rootController.presentedViewController;
-          end;
-        end;
+      var visibleController:NSObject := nil;
 
-        if (visibleController is IServiceEventReceiver) then
-        begin
-          receiver := visibleController as IServiceEventReceiver;
-        end;
+      if(not assigned(rootViewController.presentedViewController))then
+      begin
+        visibleController := rootViewController;
+      end
+      else
+      begin
+        visibleController := rootViewController.presentedViewController;
+      end;
+
+      if(visibleController is UINavigationController)then
+      begin
+        visibleController := UINavigationController(visibleController).topViewController;
+      end
+      else if (visibleController is UITabBarController)then
+      begin
+        visibleController := UITabBarController(visibleController).selectedViewController;
+      end
+      else
+      begin
+        visibleController := visibleController;
+      end;
+
+      if (visibleController is IServiceEventReceiver) then
+      begin
+        receiver := visibleController as IServiceEventReceiver;
       end;
       exit receiver;
     end;
@@ -99,7 +103,7 @@ type
 
   public
 
-    method initWithAppDelegate(appDelegate: not nullable IUIApplicationDelegate): instancetype;
+    method initWithAppDelegate(appDelegate: not nullable IUIApplicationDelegate): InstanceType;
     begin
       self := inherited init;
       if assigned(self) then

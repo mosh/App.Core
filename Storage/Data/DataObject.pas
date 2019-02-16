@@ -5,7 +5,7 @@ uses
   Foundation;
 
 type
-  [objc]
+
   DataObject = public class(RLMObject)
   public
     property Modified:Boolean;
