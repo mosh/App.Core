@@ -87,10 +87,6 @@ type
       else if (visibleController is UITabBarController)then
       begin
         visibleController := UITabBarController(visibleController).selectedViewController;
-      end
-      else
-      begin
-        visibleController := visibleController;
       end;
 
       if (visibleController is IServiceEventReceiver) then
