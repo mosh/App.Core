@@ -67,7 +67,7 @@ type
 
     method offline:Boolean;
     begin
-      NSLog('%@','calling reachability');
+      NSLog('%@','Checking Network Status...');
       try
         var obj := Reachability.reachabilityForInternetConnection;
         var status := obj.currentReachabilityStatus;
