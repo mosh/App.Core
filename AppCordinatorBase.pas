@@ -69,6 +69,11 @@ type
         exit nil;
       end;
 
+      if(rootViewController is IServiceEventReceiver)then
+      begin
+        exit rootViewController as IServiceEventReceiver;
+      end;
+
       var visibleController:NSObject := nil;
 
       if(not assigned(rootViewController.presentedViewController))then
