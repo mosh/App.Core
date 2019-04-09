@@ -19,7 +19,7 @@ type
       begin
         var httpError := HttpStatusCodeException(e);
 
-        var stringError := 'Error %d'+httpError.StatusCode;
+        var stringError := $'Error {httpError.StatusCode}';
 
         if(httpError.StatusCode=500)then
         begin
