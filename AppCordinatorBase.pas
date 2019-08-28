@@ -98,6 +98,25 @@ type
       begin
         receiver := visibleController as IServiceEventReceiver;
       end;
+
+      if(not assigned(receiver))then
+      begin
+        if(rootViewController is UINavigationController)then
+        begin
+          visibleController := UINavigationController(rootViewController).topViewController;
+        end
+        else if (rootViewController is UITabBarController)then
+        begin
+          visibleController := UITabBarController(rootViewController).selectedViewController;
+        end;
+
+        if (visibleController is IServiceEventReceiver) then
+        begin
+          receiver := visibleController as IServiceEventReceiver;
+        end;
+
+      end;
+
       exit receiver;
     end;
 
