@@ -1,7 +1,7 @@
 ﻿namespace iOSApp.Core;
 
 uses
-  Foundation;
+  Foundation, RemObjects.Elements.RTL;
 
 type
 
@@ -38,55 +38,20 @@ type
       exit NSString.stringWithFormat('%d', self);
     end;
 
-    method FormatAsDuration:NSString;
+    method FormatAsDuration:String;
     begin
-      var days:Integer;
-      var hours:Integer;
-      var minutes:Integer;
+      var span := new TimeSpan(0,self,0);
+      var value := '';
 
-      var minutesInHour:=60;
-      var minutesInDay:=60*24;
-
-      if(self < minutesInHour)then
+      if(span.Days > 0)then
       begin
-        exit NSString.stringWithFormat('%d minute(s)', self);
-      end;
-
-      var remainderQuotientValue : RemainderQuotient;
-
-      if(self >= minutesInDay)then
-      begin
-        remainderQuotientValue := RemainderQuotient.getRemainderQuotient(self, minutesInDay);
-        days := remainderQuotientValue.Quotient;
-        self := remainderQuotientValue.Remainder;
-
-      end;
-
-      remainderQuotientValue := RemainderQuotient.getRemainderQuotient(self, minutesInHour);
-      hours := remainderQuotientValue.Quotient;
-      minutes := remainderQuotientValue.Remainder;
-
-      if((hours = 0) and (days = 0)) then
-      begin
-        exit NSString.stringWithFormat('%d minute(s)', minutes);
-      end
-      else if (days = 0)then
-      begin
-        if(minutes = 0)then
-        begin
-          exit NSString.stringWithFormat('%d hour(s)', hours);
-        end;
-        exit NSString.stringWithFormat('%d hour(s) %d minute(s)', hours,minutes);
+        value := $'{span.Days} Days {span.Hours} Hours {span.Minutes} minutes';
       end
       else
       begin
-        if(minutes = 0)then
-        begin
-          exit NSString.stringWithFormat('%d day(s) %d hour(s)', days, hours);
-        end;
-        exit NSString.stringWithFormat('%d day(s) %d hour(s) %d minute(s)', days, hours,minutes);
+        value := $'{span.Hours} Hours {span.Minutes} minutes';
       end;
-
+      exit value;
     end;
 
   end;
