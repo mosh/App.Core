@@ -2,8 +2,6 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0" DefaultTargets="Build">
   <PropertyGroup Label="Globals">
     <ProjectGuid>{69003740-8B8F-4217-B66C-EF244B74FBF0}</ProjectGuid>
-  </PropertyGroup>
-  <PropertyGroup>
     <RootNamespace>iOSApp.Core</RootNamespace>
   </PropertyGroup>
   <Import Project="iOSApp.Core.projitems" Label="Shared" />
