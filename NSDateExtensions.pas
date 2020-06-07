@@ -46,7 +46,7 @@ type
         7: day := 'Sat';
       end;
 
-      exit NSString.stringwithFormat('%@ %@', day,someDate.Day.AsMonthDay);
+      exit NSString.stringWithFormat('%@ %@', day,someDate.Day.AsMonthDay);
     end;
 
 
@@ -55,7 +55,7 @@ type
       var someDate:DateTime := self;
       var dateFormatter := new NSDateFormatter;
       dateFormatter.setDateFormat('EEEE');
-      exit NSString.stringwithFormat('%@ %@', dateFormatter.stringFromDate(self),someDate.Day.AsMonthDay);
+      exit NSString.stringWithFormat('%@ %@', dateFormatter.stringFromDate(self),someDate.Day.AsMonthDay);
 
     end;
 
