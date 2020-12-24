@@ -4,11 +4,11 @@
     <RootNamespace>libiOSApp.Core</RootNamespace>
     <ProjectGuid>{7CCF42A3-3132-4668-AEF3-4335A0F59A68}</ProjectGuid>
     <OutputType>StaticLibrary</OutputType>
-    <AssemblyName>libiOSApp.Core</AssemblyName>
     <Configuration Condition="'$(Configuration)' == ''">Release</Configuration>
     <SDK>iOS</SDK>
     <MangleTypeNames>True</MangleTypeNames>
     <CreateHeaderFile>True</CreateHeaderFile>
+    <BinaryName>iOSApp.Core</BinaryName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Target)' == 'iOS' ">
     <Mode>Toffee</Mode>
