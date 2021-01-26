@@ -1,39 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <PropertyGroup>
-    <RootNamespace>libiOSApp.Core</RootNamespace>
-    <ProjectGuid>{7CCF42A3-3132-4668-AEF3-4335A0F59A68}</ProjectGuid>
+    <ProjectGuid>{944FCB9F-F5ED-4CCB-854B-CDDCD1B8D97E}</ProjectGuid>
     <OutputType>StaticLibrary</OutputType>
+    <RootNamespace>App.Core</RootNamespace>
     <Configuration Condition="'$(Configuration)' == ''">Release</Configuration>
-    <SDK>iOS</SDK>
-    <MangleTypeNames>True</MangleTypeNames>
-    <CreateHeaderFile>True</CreateHeaderFile>
-    <BinaryName>iOSApp.Core</BinaryName>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Target)' == 'iOS' ">
-    <Mode>Toffee</Mode>
-    <SubMode>iOS</SubMode>
-    <SDK>iOS</SDK>
-    <DeploymentTargetVersion>7.0</DeploymentTargetVersion>
-    <SupportUIKitForMac>True</SupportUIKitForMac>
+    <DefaultUses>RemObjects.Elements.RTL</DefaultUses>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-    <Optimize>False</Optimize>
     <OutputPath>.\Bin\Debug</OutputPath>
-    <DefineConstants>DEBUG;TRACE;</DefineConstants>
-    <GenerateDebugInfo>True</GenerateDebugInfo>
     <EnableAsserts>True</EnableAsserts>
+    <Optimize>False</Optimize>
+    <GenerateDebugInfo>True</GenerateDebugInfo>
+    <ConditionalDefines>DEBUG;TRACE;</ConditionalDefines>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <OutputPath>.\Bin\Release</OutputPath>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(Target)' == 'Island.Darwin.iOS' ">
+    <Mode>Island</Mode>
+    <SubMode>Darwin</SubMode>
+    <SDK>iOS</SDK>
+    <SupportMacCatalyst>True</SupportMacCatalyst>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Target)' == 'Toffee.iOS' ">
+    <Mode>Toffee</Mode>
+    <SDK>iOS</SDK>
+    <SupportMacCatalyst>False</SupportMacCatalyst>
+    <DefaultUses>Foundation;RemObjects.Elements.Linq</DefaultUses>
+  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CoreGraphics" />
-    <Reference Include="Foundation" />
-    <Reference Include="UIKit" />
-    <Reference Include="rtl" />
-    <Reference Include="libToffee" />
-    <Reference Include="libElements" />
+    <Reference Include="#" />
+    <Reference Include="Elements">
+      <Private>True</Private>
+    </Reference>
     <RemoteProjectReference Include="github.com/Mosh/Moshine.Foundation/Moshine.Foundation.elements:*">
       <Private>True</Private>
     </RemoteProjectReference>
@@ -41,6 +41,6 @@
       <Private>True</Private>
     </RemoteProjectReference>
   </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath)\RemObjects Software\Elements\RemObjects.Elements.Toffee.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\RemObjects Software\Elements\RemObjects.Elements.targets" />
   <Import Project="iOSApp.Core.projitems" Label="Shared" />
 </Project>

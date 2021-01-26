@@ -8,7 +8,7 @@ type
 
   // Interface used to indicate View can receive
   IServiceEventReceiver = public interface
-    method OnError(e:Exception); optional;
+    method OnError(e:Exception);  {$IF TOFFEE} optional; {$ENDIF}
   end;
 
   AppCordinatorBase = public class
@@ -123,15 +123,10 @@ type
 
   public
 
-    method initWithAppDelegate(appDelegate: not nullable IUIApplicationDelegate): InstanceType;
+    constructor WithAppDelegate(appDelegate: not nullable IUIApplicationDelegate);
     begin
-      self := inherited init;
-      if assigned(self) then
-      begin
-        _appDelegate := appDelegate;
-
-      end;
-      result := self;
+      inherited constructor;
+      _appDelegate := appDelegate;
     end;
 
   end;

@@ -1,6 +1,9 @@
 ﻿namespace iOSApp.Core.Storage;
 
 uses
+{$IF ISLAND}
+  RTL,
+{$ENDIF}
   Realm.*;
 
 type

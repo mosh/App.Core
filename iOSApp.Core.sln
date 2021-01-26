@@ -1,6 +1,8 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # RemObjects Fire
+Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "App.Core", "App.Core.elements", "{944FCB9F-F5ED-4CCB-854B-CDDCD1B8D97E}"
+EndProject
 Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "iOSApp.Core", "iOSApp.Core.elements", "{69003740-8B8F-4217-B66C-EF244B74FBF0}"
 EndProject
 Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "libiOSApp.Core", "libiOSApp.Core.elements", "{7CCF42A3-3132-4668-AEF3-4335A0F59A68}"
@@ -11,6 +13,10 @@ Global
 		Release|AnyCPU = Release|AnyCPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{944FCB9F-F5ED-4CCB-854B-CDDCD1B8D97E}.Debug|AnyCPU.ActiveCfg = Debug|AnyCPU
+		{944FCB9F-F5ED-4CCB-854B-CDDCD1B8D97E}.Debug|AnyCPU.Build.0 = Debug|AnyCPU
+		{944FCB9F-F5ED-4CCB-854B-CDDCD1B8D97E}.Release|AnyCPU.ActiveCfg = Release|AnyCPU
+		{944FCB9F-F5ED-4CCB-854B-CDDCD1B8D97E}.Release|AnyCPU.Build.0 = Release|AnyCPU
 		{7CCF42A3-3132-4668-AEF3-4335A0F59A68}.Debug|AnyCPU.ActiveCfg = Debug|AnyCPU
 		{7CCF42A3-3132-4668-AEF3-4335A0F59A68}.Debug|AnyCPU.Build.0 = Debug|AnyCPU
 		{7CCF42A3-3132-4668-AEF3-4335A0F59A68}.Release|AnyCPU.ActiveCfg = Release|AnyCPU

@@ -27,7 +27,7 @@ type
 
     constructor;
     begin
-      workerQueue := new NSOperationQueue();
+      workerQueue := new NSOperationQueue;
 
     end;
 

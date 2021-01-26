@@ -10,29 +10,18 @@ type
     domain:NSString;
 
   public
-
-    method init():id; override;
+    constructor;
     begin
-      self := inherited init;
-      if(assigned(self))then
-      begin
-        //domain:= 'moshine.com/sailinglog';
-        domain := 'http://192.168.0.10:60679';
-      end;
+      inherited;
+      //domain:= 'moshine.com/sailinglog';
+      domain := 'http://192.168.0.10:60679';
 
-      exit self;
     end;
 
-    method initWithUrl(url:String):id;
+    constructor WithUrl(url:String);
     begin
-      self := inherited init;
-      if(assigned(self))then
-      begin
-        domain := url;
-      end;
-
-      exit self;
-
+      inherited constructor;
+      domain := url;
     end;
 
   end;
