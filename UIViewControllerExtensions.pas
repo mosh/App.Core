@@ -10,7 +10,7 @@ type
   UIViewControllerExtensions = public extension class (UIViewController)
   public
 
-    method displayAlertForException(e:Exception);
+    method displayAlertForException(e:NSException);
     begin
       var title := 'Application error.';
       var message := 'Sorry an unknown error occurred.';
