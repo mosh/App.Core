@@ -6,10 +6,6 @@ uses
 
 type
 
-  // Interface used to indicate View can receive
-  IServiceEventReceiver = public interface
-    method OnError(e:Exception);  {$IF TOFFEE} optional; {$ENDIF}
-  end;
 
   AppCordinatorBase = public class
   private

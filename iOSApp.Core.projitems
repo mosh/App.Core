@@ -4,9 +4,7 @@
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
     <HasSharedItems>true</HasSharedItems>
     <SharedGUID>{69003740-8B8F-4217-B66C-EF244B74FBF0}</SharedGUID>
-    <ProjectGuid>{1C378251-DE56-44BC-8A40-6E27B6C1DDB2}</ProjectGuid>
-  </PropertyGroup>
-  <PropertyGroup Label="Configuration">
+    <ProjectGuid>{69003740-8B8F-4217-B66C-EF244B74FBF0}</ProjectGuid>
     <Import_RootNamespace>iOSApp.Core</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
@@ -19,5 +17,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)UIViewControllerExtensions.pas" />
     <Compile Include="$(MSBuildThisFileDirectory)Storage\StorageException.pas" />
     <Compile Include="$(MSBuildThisFileDirectory)Storage\StorageBase.pas" />
+    <Compile Include="$(MSBuildThisFileDirectory)IServiceEventReceiver.pas" />
   </ItemGroup>
 </Project>
