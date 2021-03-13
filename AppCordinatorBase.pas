@@ -138,6 +138,15 @@ type
 
     end;
 
+    method start;virtual;
+    begin
+      if(assigned(_navController))then
+      begin
+        _window.rootViewController := _navController;
+      end;
+      _window.makeKeyAndVisible;
+
+    end;
 
   end;
 
