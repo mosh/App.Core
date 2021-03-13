@@ -10,10 +10,10 @@ type
   AppCordinatorBase = public class
   private
 
-    _navController : UINavigationController;
-    _window: UIWindow;
 
   protected
+    _navController : UINavigationController;
+    _window: UIWindow;
 
     _appDelegate: not nullable IUIApplicationDelegate;
 
