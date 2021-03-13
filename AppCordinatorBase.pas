@@ -10,6 +10,9 @@ type
   AppCordinatorBase = public class
   private
 
+    _navController : UINavigationController;
+    _window: UIWindow;
+
   protected
 
     _appDelegate: not nullable IUIApplicationDelegate;
@@ -124,6 +127,17 @@ type
       inherited constructor;
       _appDelegate := appDelegate;
     end;
+
+    constructor WithNavigationController(navigationController:UINavigationController) Window(window:UIWindow) AppDelegate(appDelegate: not nullable IUIApplicationDelegate);
+    begin
+
+      _navController := navigationController;
+      _window := window;
+
+      constructor WithAppDelegate(appDelegate);
+
+    end;
+
 
   end;
 
