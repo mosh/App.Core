@@ -22,6 +22,7 @@
     <SubMode>Darwin</SubMode>
     <SDK>iOS</SDK>
     <SupportMacCatalyst>False</SupportMacCatalyst>
+    <DefaultObjectModel>Cocoa</DefaultObjectModel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Target)' == 'Toffee.iOS' ">
     <Mode>Toffee</Mode>
@@ -41,6 +42,17 @@
       <Private>True</Private>
     </RemoteProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppCordinatorBase.pas" />
+    <Compile Include="ServiceBase.pas" />
+    <Compile Include="IServiceEventReceiver.pas" />
+    <Compile Include="UIViewControllerExtensions.pas" />
+    <Compile Include="APIUrls.pas" />
+    <Compile Include="RemainderQuotient.pas" />
+    <Compile Include="Storage\StorageBase.pas" />
+    <Compile Include="Storage\StorageException.pas" />
+    <Compile Include="Storage\Data\NamedObject.pas" />
+    <Compile Include="Storage\Data\DataObject.pas" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\RemObjects Software\Elements\RemObjects.Elements.targets" />
-  <Import Project="iOSApp.Core.projitems" Label="Shared" />
 </Project>

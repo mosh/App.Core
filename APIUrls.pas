@@ -10,6 +10,7 @@ type
     domain:NSString;
 
   public
+
     constructor;
     begin
       inherited;
