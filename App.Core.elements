@@ -53,6 +53,7 @@
     <Compile Include="Storage\StorageException.pas" />
     <Compile Include="Storage\Data\NamedObject.pas" />
     <Compile Include="Storage\Data\DataObject.pas" />
+    <Compile Include="Storage\Extensions\RLMObjectExtensions.pas" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\RemObjects Software\Elements\RemObjects.Elements.targets" />
 </Project>
