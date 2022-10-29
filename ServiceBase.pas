@@ -7,10 +7,10 @@ uses
 
 type
 
-  ServiceBase = public abstract class
+  ServiceBase<S> = public abstract class where S is StorageBase;
 
   private
-    _storage:StorageBase;
+    _storage:S;
 
   protected
     property workerQueue:NSOperationQueue;
@@ -34,7 +34,7 @@ type
 
   public
 
-    constructor withStorage(someStorage:StorageBase);
+    constructor withStorage(someStorage:S);
     begin
       workerQueue := new NSOperationQueue();
       self._storage := someStorage;
