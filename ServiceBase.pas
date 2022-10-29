@@ -42,10 +42,10 @@ type
       Storage.launch;
     end;
 
-    method Storage:StorageBase;
-    begin
-      exit _storage;
-    end;
+    property Storage:S read
+      begin
+        exit _storage;
+      end;
 
     property InProgress:Boolean read
       begin
