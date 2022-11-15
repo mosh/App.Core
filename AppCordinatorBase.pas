@@ -2,6 +2,7 @@
 
 uses
   Foundation,
+  RemObjects.Elements.RTL,
   UIKit;
 
 type
@@ -126,6 +127,11 @@ type
     begin
       inherited constructor;
       _appDelegate := appDelegate;
+
+      var value := 'value';
+
+      Logger:Log('logger {0}', value);
+
     end;
 
     constructor WithNavigationController(navigationController:UINavigationController) Window(window:UIWindow) AppDelegate(appDelegate: not nullable IUIApplicationDelegate);
