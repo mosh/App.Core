@@ -35,7 +35,10 @@
     <Reference Include="Elements">
       <Private>True</Private>
     </Reference>
-    <RemoteProjectReference Include="github.com/Mosh/Moshine.Foundation/Moshine.Foundation.elements:*">
+    <RemoteProjectReference Include="github.com/Mosh/Moshine.Foundation/Moshine.Foundation.Contracts/Moshine.Foundation.Contracts.elements:*">
+      <Private>True</Private>
+    </RemoteProjectReference>
+    <RemoteProjectReference Include="github.com/Mosh/Moshine.Foundation/Moshine.Foundation/Moshine.Foundation.elements:*">
       <Private>True</Private>
     </RemoteProjectReference>
     <RemoteProjectReference Include="github.com/mosh/ImportSolution/Realm.elements:*">
